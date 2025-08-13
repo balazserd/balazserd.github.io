@@ -3,7 +3,7 @@
 This privacy policy applies to the TripSplit app (hereby referred to as "Application") for mobile devices that was created by Erdész Balázs (hereby referred to as "Service Provider") as a Freemium service. This service is intended for use "AS IS". Special third party services whom with you register accounts that you link to the Application are referred to as "Storage Provider"-s. 
 
 The Storage Provider services currently available for usage with the Application are the following: 
-- Google Drive<sup>[1](#google-drive)</sup>
+- Google Drive
 
 For the privacy practices of your Storage Provider you may refer to their Privacy Policy. For privacy practices of the Application in connection with the Storage Provider, see the [Storage Provider Annex](#storage-provider-annex)
 
