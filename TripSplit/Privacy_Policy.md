@@ -31,7 +31,7 @@ The Service Provider does not knowingly collect personally identifiable informat
 
 ### Security
 
-The Service Provider is concerned about safeguarding the confidentiality of your information. However, since the Application does not collect any information, there is no risk of your data being accessed by unauthorized individuals.
+The Service Provider is concerned about safeguarding the confidentiality of your information. Security procedures are in place to protect the confidentiality of your data. Where applicapble, data is encrypted.
 
 ### Your Consent
 
