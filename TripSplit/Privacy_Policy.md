@@ -53,6 +53,8 @@ Any pre-existing data, or any data outside of the designated folders are not sha
 
 You may revoke these rights any time in your Google Drive account settings.
 
+The application stores your authentication credentials towards Google Drive in a secure, encrypted way. These credentials never leave the device where the Application is installed and are not shared with third parties.
+
 ## Changes
 
 This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any changes to their Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.
