@@ -5,11 +5,10 @@
   <meta charset="utf-8" />
 </head>
 <body>
-    <p>Google Picker API Quickstart</p>
+    <p id="tripInvitationTitle">You've been invited to join [trip_name] by [trip_owner]!</p>
 
     <!--Add buttons to initiate auth sequence and sign out.-->
-    <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
-    <button id="signout_button" onclick="handleSignoutClick()">Sign Out</button>
+    <button id="authorize_button" onclick="handleAuthClick()">Join</button>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
@@ -38,7 +37,6 @@
     let gisInited = false;
 
     document.getElementById('authorize_button').style.visibility = 'hidden';
-    document.getElementById('signout_button').style.visibility = 'hidden';
 
     /**
      * Callback after api.js is loaded.
@@ -75,7 +73,7 @@
      */
     function maybeEnableButtons() {
         if (pickerInited && gisInited) {
-        document.getElementById('authorize_button').style.visibility = 'visible';
+            document.getElementById('authorize_button').style.visibility = 'visible';
         }
     }
 
@@ -88,8 +86,6 @@
                 throw (response);
             }
             accessToken = response.access_token;
-            document.getElementById('signout_button').style.visibility = 'visible';
-            document.getElementById('authorize_button').innerText = 'Refresh';
             await createPicker();
         };
 
@@ -100,19 +96,6 @@
         } else {
             // Skip display of account chooser and consent dialog for an existing session.
             tokenClient.requestAccessToken({prompt: ''});
-        }
-    }
-
-    /**
-     *  Sign out the user upon button click.
-     */
-    function handleSignoutClick() {
-        if (accessToken) {
-            google.accounts.oauth2.revoke(accessToken);
-            accessToken = null;
-            document.getElementById('content').innerText = '';
-            document.getElementById('authorize_button').innerText = 'Authorize';
-            document.getElementById('signout_button').style.visibility = 'hidden';
         }
     }
 
@@ -149,10 +132,9 @@
 
             console.log(fileId);
 
-            const res = await gapi.client.drive.files.get({
-                'fileId': fileId,
+            const res = await gapi.client.drive.files.list({
+                'includeItemsFromAllDrives': true,
                 'fields': '*',
-                'supportsAllDrives': true,
             });
 
             console.log(res);
