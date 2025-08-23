@@ -134,7 +134,9 @@
 
             const res = await gapi.client.drive.files.list({
                 'includeItemsFromAllDrives': true,
+                'supportsAllDrives': true,
                 'fields': '*',
+                'q': 'mimeType = application/vnd.google-apps.folder',
             });
 
             console.log(res);
