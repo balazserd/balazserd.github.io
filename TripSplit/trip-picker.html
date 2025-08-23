@@ -27,7 +27,7 @@
     const API_KEY = 'AIzaSyDA-TJWsz_97_jsUM9TC22IT7vVD0E-ifY';
 
     // TODO(developer): Replace with your project number from https://console.cloud.google.com/.
-    const APP_ID = 'tripsplit-1727690944110';
+    const APP_ID = '268504637547';
     
     const tripContainerFolderId = new URL(document.location.toString()).searchParams.get("tripid")
 
@@ -133,7 +133,7 @@
             console.log(fileId);
 
             gapi.client.setToken({ access_token: accessToken });
-            
+
             const _r = await gapi.client.drive.files.list({
                 "fields": "files(id,properties)",
                 "supportsAllDrives": "true",
