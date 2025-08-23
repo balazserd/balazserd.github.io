@@ -132,11 +132,24 @@
 
             console.log(fileId);
 
-            const res = await gapi.client.drive.files.list({
-                'includeItemsFromAllDrives': true,
-                'supportsAllDrives': true,
+            gapi.client.setToken({ access_token: accessToken });
+            
+            const _r = await gapi.client.drive.files.list({
+                "fields": "files(id,properties)",
+                "supportsAllDrives": "true",
+                "includeItemsFromAllDrives": "true",
+                "corpora": "allDrives",
+                "q": "properties has { key='tripSplit.entityType' and value='tripFolder' }" +
+                    "and mimeType = 'application/vnd.google-apps.folder' " +
+                    "and trashed = false"
+            });
+
+            console.log(_r);
+
+            const res = await gapi.client.drive.files.get({
+                'fileId': fileId,
                 'fields': '*',
-                'q': "mimeType = 'application/vnd.google-apps.folder'",
+                'supportsAllDrives': true,
             });
 
             console.log(res);
