@@ -106,6 +106,7 @@
     function createPicker() {
         const view = new google.picker.DocsView(google.picker.ViewId.FOLDERS)
             .setFileIds(tripContainerFolderId)
+            .setIncludeFolders(true)
             .setSelectFolderEnabled(true);
 
         const picker = new google.picker.PickerBuilder()
